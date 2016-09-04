@@ -120,6 +120,9 @@ function($scope, HomeDataSvc, $timeout, LoginSvc, $location, CartDataSvc){
 			if (status) {
 				$location.path('/success');
 			}
+			else {
+				alert('Wrong credentials. Try again');
+			}
 		}, 
 		function(err){
 			console.log('Something went wrong', err);

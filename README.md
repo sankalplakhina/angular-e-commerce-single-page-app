@@ -1,4 +1,4 @@
-# README #
+# Angular E-Commerce Single Page App #
 
 ### How do I get set up? ###
 
@@ -9,11 +9,12 @@
 * sudo npm install
 * If everything installed properly, run: gulp
 * Use command: gulp watch (optional) for dev environment which watches LESS and js files for changes
-* npm start
+* npm start for dev
+* npm run prod for production
 * app will fire up at http://localhost:5000
-* To test prod environment run: export NODE_ENV=production and then npm start
+* To test prod environment run: export NODE_ENV=production and then npm start or npm run prod
 
 ### Who do I talk to? ###
 
 * Sankalp Lakhina
-* Reachable at sankalp.lakhina91@gmail.com or +91-9999041778
+* Reachable at sankalp.lakhina91@gmail.com

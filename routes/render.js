@@ -40,9 +40,11 @@ var renderLoginJSON = function(req, res) {
           users[i].email === reqBody.email &&
           users[i].password &&
           users[i].password === reqBody.password ) {
-        res.json({
-          status: true
-        });
+          
+          res.json({
+            status: true
+          });
+          return;
       }
     }
   }

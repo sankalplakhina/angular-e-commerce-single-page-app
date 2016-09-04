@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon --ext handlebars,js,json --ignore src/js/main.js --ignore public/js/ --ignore node_modules/ --ignore bower_components/ server.js --harmony"
+    "start": "nodemon --ext handlebars,js,json --ignore src/js/main.js --ignore public/js/ --ignore node_modules/ --ignore bower_components/ server.js --harmony",
+    "prod": "NODE_ENV=production node server.js --harmony"
   },
   "dependencies": {
     "angular": "^1.5.8",
