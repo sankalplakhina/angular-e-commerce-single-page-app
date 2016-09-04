@@ -8,6 +8,8 @@ function($scope, HomeDataSvc, $timeout, LoginSvc, $location, CartDataSvc){
 	$scope.STOCK_LIMIT = 10;
 	$scope.sizeOfObj = Object.keys;
 	$scope.sortAsc = true;
+
+	// getting data from services and binding them to scope by reference
 	$scope.correctSession = LoginSvc.getloginStatus();
 
 	$scope.cartData = CartDataSvc.get().cartData;
@@ -15,7 +17,6 @@ function($scope, HomeDataSvc, $timeout, LoginSvc, $location, CartDataSvc){
 	
 	$scope.homeData = {};
 	HomeDataSvc.get().then(function(homeData){
-		// getting data from service and binding them to scope by reference
 		$scope.homeData.categories = homeData.categories;
 		$scope.homeData.details = homeData.details
 	});
@@ -25,26 +26,28 @@ function($scope, HomeDataSvc, $timeout, LoginSvc, $location, CartDataSvc){
 	};
 
 	$scope.orderingFn = function(item){
-		if ($scope.homeData.details[item.id] && $scope.homeData.details[item.id].price) {
+		var itemObj = $scope.homeData.details[item.id];
+		if (itemObj && itemObj.price) {
 			if ($scope.sortAsc) {
-				return $scope.homeData.details[item.id].price;
+				return itemObj.price;
 			}
 			else {
-				return -$scope.homeData.details[item.id].price;
+				return -itemObj.price;
 			}
 		}
 		return false;
 	};
 
-	$scope.addToCart = function(item) {
-		var product = $scope.homeData.details[item.id];
+	$scope.addToCart = function(itemObj) {
+
+		var product = itemObj;
 		if (product.in_cart) {
 			// already in cart, just update quantity
 			return $scope.increaseQty(product);
 		}
 		product.in_cart = true;
 		product.qty = ++product.qty;
-		$scope.cartData[item.id] = product;
+		$scope.cartData[itemObj.id] = product;
 		return calculateTotal();
 	};
 
