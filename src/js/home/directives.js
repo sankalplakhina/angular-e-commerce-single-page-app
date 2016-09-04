@@ -1,11 +1,11 @@
 angular.module('homeView')
 
-.directive('someCard', [function(){
+.directive('itemCard', [function(){
 	return {
-		scope: {},
-		template: '/<div>someCard</div>',
+		scope: false,
+		template: '<div>itemCard</div>',
 		link: function(scope, iElm, iAttrs, controller) {
-			console.log("in directive's link function");
+			// console.log("in directive's link function");
 		}
 	};
 }]);
