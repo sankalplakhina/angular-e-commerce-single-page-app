@@ -1,4 +1,10 @@
 var config = require('../config.json');
+try {
+  var db = require('../models/db.json');
+}
+catch (err) {
+  console.log('Error fetching db.json', err);
+}
 
 var renderApp = function(req, res) {
 
@@ -15,7 +21,12 @@ var renderJSON = function(req, res) {
     });
 };
 
+var renderProductsJSON = function(req, res) {
+  res.json(db);
+};
+
 module.exports = {
   renderApp: renderApp,
-  renderJSON: renderJSON
+  renderJSON: renderJSON,
+  renderProductsJSON: renderProductsJSON
 };

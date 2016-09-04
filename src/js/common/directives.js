@@ -5,6 +5,7 @@ angular.module('commonViews')
 		scope: {},
 		restrict: "AE",
 		replace: true,
+		transclude: true,
 		templateUrl: '/src/js/common/views/appHeader.html',
 		link: function(scope, iElm, iAttrs, controller) {
 			// console.log("in directive's link function");
@@ -15,8 +16,9 @@ angular.module('commonViews')
 .directive('appFooter', [function(){
 	return {
 		scope: {},
-		restrict: "AE",
+		restrict: "E",
 		replace: true,
+		transclude: true,
 		templateUrl: '/src/js/common/views/appFooter.html',
 		link: function(scope, iElm, iAttrs, controller) {
 			// console.log("in directive's link function");

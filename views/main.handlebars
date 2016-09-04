@@ -12,17 +12,25 @@
     {{else}}
       <link rel="stylesheet" type="text/css" href="/public/css/styles-<!-- @echo hash -->.min.css">
     {{/if}}
-
+    <style type="text/css">
+      [ng-cloak] {
+        display: none;
+      }
+    </style>
   </head>
-  <body>
+  <body ng-cloak>
 
   <!-- Fixed navbar -->
-  <app-header></app-header>
+  <app-header>
+    <a class="navbar-brand" href="#">Angular E-Commerce App</a>
+  </app-header>
   
   <div class="container" ng-view></div>
   
   <!-- Sticky footer -->
-  <app-footer></app-footer>
+  <app-footer>
+    <p class="text-muted text-center">Developed by <a href="mailto:sankalp.lakhina91@gmail.com">Sankalp Lakhina</a></p>
+  </app-footer>
 
     <script type="text/javascript">
       window.appGlobal = {};

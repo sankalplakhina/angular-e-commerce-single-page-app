@@ -1,1 +1,76 @@
-<div>index page of Home</div>
+<div class="home-page">
+	<div class="row">
+		<div class="col-xs-8 area-l">
+			<div class="area-title row">
+				<div class="col-xs-6 text-left title">Categories</div>
+				<div class="col-xs-6 text-right text" ng-click="sortDataByPrice()">
+					<button type="button" 
+							class="btn btn-info"
+							ng-show="sortAsc">
+							Order by Price - High to Low
+					</button>
+					<button type="button" 
+							class="btn btn-info"
+							ng-hide="sortAsc">
+							Order by Price - Low to High
+					</button>
+				</div>
+			</div>
+			<div class="clearfix" ng-repeat="category in homeData.categories track by category.id">
+				<div class="title clearfix">
+					<div class="col-xs-6 text-left" ng-bind="homeData.details[category.id].title"></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4" ng-repeat="item in homeData.details[category.id].items | orderBy:orderingFn track by item.id">
+						<div class="item">
+							<div class="item-details">
+								<div class="name" ng-bind="homeData.details[item.id].name"></div>
+								<div class="price">{{'Rs. ' + homeData.details[item.id].price}}</div>
+							</div>
+							<div class="item-actions clearfix">
+								<div class="col-xs-6 text-left" ng-bind="homeData.details[item.id].in_cart"></div>
+								<div class="col-xs-6 text-right">
+									<button type="button" 
+											class="btn btn-success"
+											ng-disabled="homeData.details[item.id].qty > (STOCK_LIMIT - 1)"
+											ng-click="addToCart(homeData.details[item.id])">
+											Add
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-4 area-r">
+			<div class="section-area">
+				<div class="area-title row">
+					<div class="title text-center">My Cart</div>
+				</div>
+				<div class="cart-view">
+					<div class="cart-items">
+						<div class="no-data text-center" ng-if="sizeOfObj(cartData).length === 0">Please add items to your cart</div>
+						<div class="cart-item" 
+							 ng-if="sizeOfObj(cartData).length" 
+							 ng-repeat="(itemId, itemData) in cartData"
+							 >
+							 <div class="col-xs-5 pd0 text-left">{{itemData.name}}</div>
+							 <div class="col-xs-3 pd0 options">
+							 	<span class="link" ng-click="decreaseQty(itemData)">-</span>
+							 	<span>{{itemData.qty}}</span>
+							 	<span class="link" ng-click="increaseQty(itemData)">+</span>
+							 </div>
+							 <div class="col-xs-4 pd0 text-right">{{'Rs.' + (itemData.price*itemData.qty) }}</div>
+						</div>
+						<div class="text-center" ng-if="sizeOfObj(cartData).length">Max. 10 units per item</div>
+					</div>
+					<div class="cart-calcs" ng-if="sizeOfObj(cartData).length">
+						<div class="cart-subtotal text-right">Subtotal: {{"Rs. " + cartCalcs.subtotal}}</div>
+						<div class="cart-taxes text-right">Tax(5%): {{"Rs. " + cartCalcs.taxAmt}}</div>
+						<div class="cart-total text-right">Total: {{"Rs. " + cartCalcs.totalAmt}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>

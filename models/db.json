@@ -1,0 +1,196 @@
+{
+	"categories": [
+		{
+			"id": "c_1"
+		},
+		{
+			"id": "c_2"
+		},
+		{
+			"id": "c_3"
+		},
+		{
+			"id": "c_4"
+		},
+		{
+			"id": "c_5"
+		}
+	],
+	"details": {
+		"c_1": {
+			"title": "Electronics",
+			"id": "c_1",
+			"items": [
+				{
+					"id": "c_1_i_1"
+				},
+				{
+					"id": "c_1_i_2"
+				},
+				{
+					"id": "c_1_i_3"
+				},
+				{
+					"id": "c_1_i_4"
+				},
+				{
+					"id": "c_1_i_5"
+				}
+			]
+		},		
+		"c_2": {
+			"title": "Books",
+			"id": "c_2",
+			"items": [
+				{
+					"id": "c_2_i_1"
+				},
+				{
+					"id": "c_2_i_2"
+				},
+				{
+					"id": "c_2_i_3"
+				},
+				{
+					"id": "c_2_i_4"
+				}
+			]
+		},
+		"c_3": {
+			"title": "Clothes",
+			"id": "c_3",
+			"items": [
+				{
+					"id": "c_3_i_1"
+				},
+				{
+					"id": "c_3_i_2"
+				},
+				{
+					"id": "c_3_i_3"
+				},
+				{
+					"id": "c_3_i_4"
+				},
+				{
+					"id": "c_3_i_5"
+				}
+			]
+		},
+		"c_4": {
+			"title": "Shoes",
+			"id": "c_4",
+			"items": [
+				{
+					"id": "c_4_i_1"
+				},
+				{
+					"id": "c_4_i_2"
+				},
+				{
+					"id": "c_4_i_3"
+				},
+				{
+					"id": "c_4_i_4"
+				},
+				{
+					"id": "c_4_i_5"
+				}
+			]
+		},
+		"c_5": {
+			"title": "Toys",
+			"id": "c_5",
+			"items": [
+				{
+					"id": "c_5_i_1"
+				},
+				{
+					"id": "c_5_i_2"
+				},
+				{
+					"id": "c_5_i_3"
+				},
+				{
+					"id": "c_5_i_4"
+				},
+				{
+					"id": "c_5_i_5"
+				}
+			]
+		},
+		"c_1_i_1": {
+			"cid": "c_1",
+			"id": "c_1_i_1",
+			"name": "Mobile Item 1",
+			"price": 5000,
+			"in_cart": false,
+			"qty": 0
+		},
+		"c_1_i_2": {
+			"cid": "c_1",
+			"id": "c_1_i_2",
+			"name": "Mobile Item 2",
+			"price": 50000,
+			"in_cart": false,
+			"qty": 0
+		},
+		"c_1_i_3": {
+			"cid": "c_1",
+			"id": "c_1_i_3",
+			"name": "Mobile Item 3",
+			"price": 40000,
+			"in_cart": false,
+			"qty": 0
+		},
+		"c_1_i_4": {
+			"cid": "c_1",
+			"id": "c_1_i_4",
+			"name": "Mobile Item 4",
+			"price": 10000,
+			"in_cart": false,
+			"qty": 0
+		},
+		"c_1_i_5": {
+			"cid": "c_1",
+			"id": "c_1_i_5",
+			"name": "Mobile Item 5",
+			"price": 20000,
+			"in_cart": false,
+			"qty": 0
+		},
+		"c_2_i_1": {
+			"cid": "c_2",
+			"id": "c_2_i_1",
+			"name": "Book Item 1",
+			"price": 50000,
+			"in_cart": false,
+			"qty": 0
+		},
+		"c_2_i_2": {
+			"cid": "c_2",
+			"id": "c_2_i_2",
+			"name": "Book Item 2",
+			"price": 50000,
+			"in_cart": false,
+			"qty": 0
+		},
+		"c_2_i_3": {
+			"cid": "c_2",
+			"id": "c_2_i_3",
+			"name": "Book Item 3",
+			"price": 50000,
+			"in_cart": false,
+			"qty": 0
+		},
+		"c_2_i_4": {
+			"cid": "c_2",
+			"id": "c_2_i_4",
+			"name": "Book Item 4",
+			"price": 50000,
+			"in_cart": false,
+			"qty": 0
+		}
+
+	}
+}
