@@ -8,11 +8,10 @@
 * global install: sudo npm install gulp -g
 * sudo npm install
 * If everything installed properly, run: gulp
-* Use command: gulp watch (optional) for dev environment which watches LESS and js files for changes
-* npm start for dev
-* npm run prod for production
-* app will fire up at http://localhost:5000
-* To test prod environment run: export NODE_ENV=production and then npm start or npm run prod
+* Use command: gulp watch (skip if only need to run app in prod mode) for dev environment which watches LESS and js files for changes
+* Use command: npm start (skip if only need to run app in prod mode) to starting the app in dev environment
+* Use command: npm run prod to start app in production environment
+* App will start up at http://localhost:5000
 
 ### Who do I talk to? ###
 
