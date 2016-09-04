@@ -74,6 +74,9 @@
 				},
 				{
 					"id": "c_3_i_5"
+				},
+				{
+					"id": "c_3_i_6"
 				}
 			]
 		},
@@ -86,15 +89,6 @@
 				},
 				{
 					"id": "c_4_i_2"
-				},
-				{
-					"id": "c_4_i_3"
-				},
-				{
-					"id": "c_4_i_4"
-				},
-				{
-					"id": "c_4_i_5"
 				}
 			]
 		},
@@ -110,12 +104,6 @@
 				},
 				{
 					"id": "c_5_i_3"
-				},
-				{
-					"id": "c_5_i_4"
-				},
-				{
-					"id": "c_5_i_5"
 				}
 			]
 		},
@@ -125,7 +113,8 @@
 			"name": "Mobile Item 1",
 			"price": 5000,
 			"in_cart": false,
-			"qty": 0
+			"qty": 0,
+			"color": "#d9edf7"
 		},
 		"c_1_i_2": {
 			"cid": "c_1",
@@ -133,7 +122,8 @@
 			"name": "Mobile Item 2",
 			"price": 50000,
 			"in_cart": false,
-			"qty": 0
+			"qty": 0,
+			"color": "#dff0d8"
 		},
 		"c_1_i_3": {
 			"cid": "c_1",
@@ -141,7 +131,8 @@
 			"name": "Mobile Item 3",
 			"price": 40000,
 			"in_cart": false,
-			"qty": 0
+			"qty": 0,
+			"color": "#f2dede"
 		},
 		"c_1_i_4": {
 			"cid": "c_1",
@@ -149,7 +140,8 @@
 			"name": "Mobile Item 4",
 			"price": 10000,
 			"in_cart": false,
-			"qty": 0
+			"qty": 0,
+			"color": "#d9edf7"
 		},
 		"c_1_i_5": {
 			"cid": "c_1",
@@ -157,40 +149,143 @@
 			"name": "Mobile Item 5",
 			"price": 20000,
 			"in_cart": false,
-			"qty": 0
+			"qty": 0,
+			"color": "#d9edf7"
 		},
 		"c_2_i_1": {
 			"cid": "c_2",
 			"id": "c_2_i_1",
 			"name": "Book Item 1",
-			"price": 50000,
+			"price": 1000,
 			"in_cart": false,
-			"qty": 0
+			"qty": 0,
+			"color": "#d9edf7"
 		},
 		"c_2_i_2": {
 			"cid": "c_2",
 			"id": "c_2_i_2",
 			"name": "Book Item 2",
-			"price": 50000,
+			"price": 500,
 			"in_cart": false,
-			"qty": 0
+			"qty": 0,
+			"color": "#dff0d8"
 		},
 		"c_2_i_3": {
 			"cid": "c_2",
 			"id": "c_2_i_3",
 			"name": "Book Item 3",
-			"price": 50000,
+			"price": 10000,
 			"in_cart": false,
-			"qty": 0
+			"qty": 0,
+			"color": "#f2dede"
 		},
 		"c_2_i_4": {
 			"cid": "c_2",
 			"id": "c_2_i_4",
 			"name": "Book Item 4",
-			"price": 50000,
+			"price": 5000,
 			"in_cart": false,
-			"qty": 0
+			"qty": 0,
+			"color": "#d9edf7"
+		},
+		"c_3_i_1": {
+			"cid": "c_3",
+			"id": "c_3_i_1",
+			"name": "Clothes Item 1",
+			"price": 400,
+			"in_cart": false,
+			"qty": 0,
+			"color": "#d9edf7"
+		},
+		"c_3_i_2": {
+			"cid": "c_3",
+			"id": "c_3_i_2",
+			"name": "Clothes Item 2",
+			"price": 200,
+			"in_cart": false,
+			"qty": 0,
+			"color": "#dff0d8"
+		},
+		"c_3_i_3": {
+			"cid": "c_3",
+			"id": "c_3_i_3",
+			"name": "Clothes Item 3",
+			"price": 1000,
+			"in_cart": false,
+			"qty": 0,
+			"color": "#f2dede"
+		},
+		"c_3_i_4": {
+			"cid": "c_3",
+			"id": "c_3_i_4",
+			"name": "Clothes Item 4",
+			"price": 8000,
+			"in_cart": false,
+			"qty": 0,
+			"color": "#d9edf7"
+		},
+		"c_3_i_5": {
+			"cid": "c_3",
+			"id": "c_3_i_5",
+			"name": "Clothes Item 5",
+			"price": 6000,
+			"in_cart": false,
+			"qty": 0,
+			"color": "#d9edf7"
+		},
+		"c_3_i_6": {
+			"cid": "c_3",
+			"id": "c_3_i_6",
+			"name": "Clothes Item 6",
+			"price": 6000,
+			"in_cart": false,
+			"qty": 0,
+			"color": "#d9edf7"
+		},
+		"c_4_i_1": {
+			"cid": "c_4",
+			"id": "c_4_i_1",
+			"name": "Shoes Item 1",
+			"price": 3000,
+			"in_cart": false,
+			"qty": 0,
+			"color": "#d9edf7"
+		},		
+		"c_4_i_2": {
+			"cid": "c_4",
+			"id": "c_4_i_2",
+			"name": "Shoes Item 2",
+			"price": 4000,
+			"in_cart": false,
+			"qty": 0,
+			"color": "#dff0d8"
+		},		
+		"c_5_i_1": {
+			"cid": "c_5",
+			"id": "c_5_i_1",
+			"name": "Toys Item 1",
+			"price": 200,
+			"in_cart": false,
+			"qty": 0,
+			"color": "#d9edf7"
+		},
+		"c_5_i_2": {
+			"cid": "c_5",
+			"id": "c_5_i_2",
+			"name": "Toys Item 2",
+			"price": 11000,
+			"in_cart": false,
+			"qty": 0,
+			"color": "#dff0d8"
+		},
+		"c_5_i_3": {
+			"cid": "c_5",
+			"id": "c_5_i_3",
+			"name": "Toys Item 3",
+			"price": 20000,
+			"in_cart": false,
+			"qty": 0,
+			"color": "#f2dede"
 		}
-
 	}
 }

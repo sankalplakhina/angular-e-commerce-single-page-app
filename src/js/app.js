@@ -1,4 +1,4 @@
-angular.module('ecommerceApp', ['ngRoute', 'commonViews', 'homeView'])
+angular.module('ecommerceApp', ['ngRoute', 'commonViews', 'homeView', 'successView'])
 
 .config(["$routeProvider", "$locationProvider", "$httpProvider",
 function($routeProvider, $locationProvider, $httpProvider) {
@@ -11,6 +11,10 @@ function($routeProvider, $locationProvider, $httpProvider) {
         .when("/home", {
             templateUrl: "/src/js/home/views/index.html",
             controller: "HomeCntrlr"
+        })        
+        .when("/success", {
+            templateUrl: "/src/js/success/views/index.html",
+            controller: "SuccessCntrlr"
         })
         .otherwise({
             redirectTo: '/'

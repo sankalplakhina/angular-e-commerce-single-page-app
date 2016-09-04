@@ -22,13 +22,12 @@
 				</div>
 				<div class="row">
 					<div class="col-xs-4" ng-repeat="item in homeData.details[category.id].items | orderBy:orderingFn track by item.id">
-						<div class="item">
+						<div class="item" ng-style="{'background': homeData.details[item.id].color}">
 							<div class="item-details">
 								<div class="name" ng-bind="homeData.details[item.id].name"></div>
-								<div class="price">{{'Rs. ' + homeData.details[item.id].price}}</div>
 							</div>
 							<div class="item-actions clearfix">
-								<div class="col-xs-6 text-left" ng-bind="homeData.details[item.id].in_cart"></div>
+								<div class="col-xs-6 text-left price">{{'Rs. ' + homeData.details[item.id].price}}</div>
 								<div class="col-xs-6 text-right">
 									<button type="button" 
 											class="btn btn-success"
@@ -54,6 +53,7 @@
 						<div class="cart-item" 
 							 ng-if="sizeOfObj(cartData).length" 
 							 ng-repeat="(itemId, itemData) in cartData"
+							 ng-style="{'background': itemData.color}"
 							 >
 							 <div class="col-xs-5 pd0 text-left">{{itemData.name}}</div>
 							 <div class="col-xs-3 pd0 options">
@@ -70,7 +70,57 @@
 						<div class="cart-taxes text-right">Tax(5%): {{"Rs. " + cartCalcs.taxAmt}}</div>
 						<div class="cart-total text-right">Total: {{"Rs. " + cartCalcs.totalAmt}}</div>
 					</div>
+					<div class="cart-checkout text-right" ng-if="sizeOfObj(cartData).length">
+						<button type="button" 
+								class="btn btn-danger"
+								ng-disabled="correctSession"
+								ng-click="openCheckoutWindow()">
+								Checkout
+						</button>
+					</div>
 				</div>
 			</div>
+		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" 
+			 ng-class="{'in': userDetailModal.appear}" 
+			 tabindex="-1" 
+			 role="dialog" 
+			 aria-labelledby="myModalLabel" 
+			 ng-style="userDetailModal.style">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeCheckoutWindow()">
+		        	<span aria-hidden="true">&times;</span>
+		        </button>
+		        <h4 class="modal-title" id="myModalLabel">Login</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form name="loginForm" ng-submit="validateAuthentication()">
+		          <div class="form-group">
+		            <label for="exampleInputEmail1">Email address</label>
+		            <input type="email" 
+		            	   required
+		            	   class="form-control" 
+		            	   id="exampleInputEmail1" 
+		            	   ng-model="userDetailModal.userObj.email"
+		            	   placeholder="Email">
+		          </div>
+		          <div class="form-group">
+		            <label for="exampleInputPassword1">Password</label>
+		            <input type="password" 
+		            	   required
+		            	   class="form-control" 
+		            	   id="exampleInputPassword1" 
+		            	   ng-model="userDetailModal.userObj.password"
+		            	   placeholder="Password">
+		          </div>
+		          <button type="submit" class="btn btn-default">Submit</button>
+		        </form>
+		      </div>
+		    </div>
+		  </div>
 		</div>
 </div>

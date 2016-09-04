@@ -45,6 +45,50 @@ code {
 	cursor: pointer;
 }
 
+.cart-view {
+	padding: 10px;
+	.cart-items {
+		padding-bottom: 10px;
+		border-bottom: 1px solid #e3e3e3;
+		.no-data {
+
+		}
+		.cart-item {
+			border: 1px solid #e3e3e3;
+			padding: 10px;
+			margin-bottom: 5px;
+			.clearfix;
+			.options {
+				span {
+					display: inline-block;
+					border: 1px solid #777777;
+					padding: 0 5px;
+					border-radius: 4px;
+				}
+			}
+		}
+	}
+	.cart-calcs {
+		padding: 10px 0;
+	}
+}
+
+.area-title {
+	padding: 15px;
+	.title {
+		font-size: 20px;
+		padding: 0;
+	}
+}
+
+.success-page {
+	background-color: white;
+	padding: 10px 0;
+	h2 {
+		margin: 10px;
+	}
+}
+
 .home-page {
 	.area-l {
 		background-color: white;
@@ -54,45 +98,11 @@ code {
 			border: 1px solid #e3e3e3;
 			border-radius: 4px;
 			background-color: white; 
-			.cart-view {
-				padding: 10px;
-				.cart-items {
-					padding-bottom: 10px;
-					border-bottom: 1px solid #e3e3e3;
-					.no-data {
-
-					}
-					.cart-item {
-						border: 1px solid #e3e3e3;
-						padding: 10px;
-						margin-bottom: 5px;
-						.clearfix;
-						.options {
-							span {
-								display: inline-block;
-								border: 1px solid #e3e3e3;
-								padding: 0 5px;
-							}
-						}
-					}
-				}
-				.cart-calcs {
-					padding: 10px 0;
-				}
-			}
-		}
-	}
-
-	.area-title {
-		padding: 15px;
-		.title {
-			font-size: 20px;
-			padding: 0;
-		}
-		.text {
 
 		}
 	}
+
+
 	.title {
 		padding: 10px 0;
 		font-size: 18px;
@@ -115,6 +125,11 @@ code {
 			width: 100%;
 			background: white;
 			padding: 10px 0;
+			.price {
+				height: 34px;
+				line-height: 34px;
+				font-weight: bold;
+			}
 		}
 	}
 }

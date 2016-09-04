@@ -1,21 +1,25 @@
 angular.module('homeView', [])
 
-.controller('HomeCntrlr', ['$scope', 'HomeDataSvc', function($scope, HomeDataSvc){
+.controller('HomeCntrlr', ['$scope', 'HomeDataSvc', '$timeout', 'LoginSvc', '$location', 'CartDataSvc',
+function($scope, HomeDataSvc, $timeout, LoginSvc, $location, CartDataSvc){
 	
 	var TAX_PERCENT = 0.5;
 	
 	$scope.STOCK_LIMIT = 10;
 	$scope.sizeOfObj = Object.keys;
-	$scope.cartData = {};
-	$scope.cartCalcs = {};
-	$scope.homeData = {};
+	$scope.sortAsc = true;
+	$scope.correctSession = LoginSvc.getloginStatus();
+
+	$scope.cartData = CartDataSvc.get().cartData;
+	$scope.cartCalcs = CartDataSvc.get().cartCalcs;
 	
+	$scope.homeData = {};
 	HomeDataSvc.get().then(function(homeData){
+		// getting data from service and binding them to scope by reference
 		$scope.homeData.categories = homeData.categories;
 		$scope.homeData.details = homeData.details
 	});
 
-	$scope.sortAsc = true;
 	$scope.sortDataByPrice = function(){
 		$scope.sortAsc = !$scope.sortAsc;
 	};
@@ -74,6 +78,52 @@ angular.module('homeView', [])
 		}
 		cartCalcs.taxAmt = TAX_PERCENT * cartCalcs.subtotal;
 		cartCalcs.totalAmt = cartCalcs.subtotal + cartCalcs.taxAmt;
+	};
+
+	$scope.closeCheckoutWindow = function(){
+		$scope.userDetailModal.appear = false;
+		$timeout(function(){
+			initUserDetailModal();
+		}, 200);
+	};
+
+	$scope.openCheckoutWindow = function(){
+		if ($scope.cartCalcs.totalAmt) {
+			// Open modal window after initialising it 
+
+			var modalData = initUserDetailModal(); 
+			$scope.userDetailModal.style.display = "block";
+			$scope.userDetailModal.style.paddingLeft = "0px";
+			$timeout(function(){
+				$scope.userDetailModal.appear = true;
+			}, 200);
+		}
+	};
+
+	function initUserDetailModal () {
+	    $scope.userDetailModal = {
+	        userObj: null,
+	        appear: false,
+	        style: {
+	        	display: 'none'
+	        }
+	    };
+	    return $scope.userDetailModal;
+	}
+
+	$scope.validateAuthentication = function(){
+
+		LoginSvc.validateAuthentication($scope.userDetailModal.userObj)
+		.then(
+		function(res){
+			var status = res.data.status;
+			if (status) {
+				$location.path('/success');
+			}
+		}, 
+		function(err){
+			console.log('Something went wrong', err);
+		});
 	};
 
 }]);

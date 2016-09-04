@@ -4,6 +4,9 @@ var express = require('express'),
     http = require('http'),
     config = require('./config.json');
 
+var bodyParser = require('body-parser');
+var compression = require('compression');
+
 // Create an express instance and set a port variable
 var app = express();
 var port = process.env.PORT || config.port || 4000;
@@ -11,6 +14,12 @@ var port = process.env.PORT || config.port || 4000;
 // Set handlebars as the templating engine
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
+
+app.use(compression()); // enables gzip compression, should be the first express middleware
+
+// body parser middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // Disable etag headers on responses - eTag(entity Tag) is a header which caches on browser
 app.disable('etag');

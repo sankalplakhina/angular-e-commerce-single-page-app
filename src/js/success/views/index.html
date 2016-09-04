@@ -1,0 +1,32 @@
+<div class="success-page">
+	<div class="text-center" ng-if="!correctSession">
+		<h2>Could not validate your session and login information.</h2>
+		<a href="/">Click here to go back to home page.</a>
+	</div>
+	<div class="success" ng-if="correctSession">
+		<div class="area-title row">
+			<div class="title text-center">Wohooo! Your cart items will be deilvered soon</div>
+		</div>
+		<div class="cart-view">
+			<div class="cart-items">
+				<div class="no-data text-center" ng-if="sizeOfObj(cartData).length === 0">No items to your cart</div>
+				<div class="cart-item" 
+					 ng-if="sizeOfObj(cartData).length" 
+					 ng-repeat="(itemId, itemData) in cartData"
+					 ng-style="{'background': itemData.color}"
+					 >
+					 <div class="col-xs-8 pd0 text-left">{{itemData.name}}</div>
+					 <div class="col-xs-2 pd0 options">
+					 	<span>Quantity: {{itemData.qty + " unit"}}</span>
+					 </div>
+					 <div class="col-xs-2 pd0 text-right">{{'Rs.' + (itemData.price*itemData.qty) }}</div>
+				</div>
+			</div>
+			<div class="cart-calcs" ng-if="sizeOfObj(cartData).length">
+				<div class="cart-subtotal text-right">Subtotal: {{"Rs. " + cartCalcs.subtotal}}</div>
+				<div class="cart-taxes text-right">Tax(5%): {{"Rs. " + cartCalcs.taxAmt}}</div>
+				<div class="cart-total text-right">Total: {{"Rs. " + cartCalcs.totalAmt}}</div>
+			</div>
+		</div>
+	</div>
+</div>
