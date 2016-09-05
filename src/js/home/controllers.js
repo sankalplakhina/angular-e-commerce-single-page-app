@@ -25,19 +25,6 @@ function($scope, HomeDataSvc, $timeout, LoginSvc, $location, CartDataSvc){
 		$scope.sortAsc = !$scope.sortAsc;
 	};
 
-	$scope.orderingFn = function(item){
-		var itemObj = $scope.homeData.details[item.id];
-		if (itemObj && itemObj.price) {
-			if ($scope.sortAsc) {
-				return itemObj.price;
-			}
-			else {
-				return -itemObj.price;
-			}
-		}
-		return false;
-	};
-
 	$scope.addToCart = function(itemObj) {
 
 		var product = itemObj;
