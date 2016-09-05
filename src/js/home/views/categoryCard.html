@@ -1,0 +1,13 @@
+<div class="clearfix">
+	<div class="title clearfix">
+		<div class="col-xs-6 text-left" ng-bind="homeData.details[category.id].title"></div>
+	</div>
+	<div class="row">
+		<item-card item="item"
+				   home-data="homeData"
+				   sort-asc="sortAsc"
+				   add-to-cart="addToCart"
+				   ng-repeat="item in homeData.details[category.id].items | orderBy:orderingFn track by item.id">
+		</item-card>
+	</div>
+</div>
